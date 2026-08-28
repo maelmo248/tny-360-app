@@ -1,0 +1,13 @@
+# Dépendances Node.js / TypeScript
+node_modules/
+dist/
+.env
+
+# Environnements virtuels et cache Python
+pycache/
+*.pyc
+.venv/
+venv/
+
+# Modèles lourds (recommandé de les héberger ailleurs ou les télécharger au setup)
+*.pt

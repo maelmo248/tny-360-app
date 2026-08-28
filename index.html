@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TNY360 - Contrôle</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="left-panel">
+      <div class="card telemetry-card">
+        <h2>Télémétrie</h2>
+        <div class="metrics">
+          <div class="metric"><span class="label">Tension</span><div class="value-wrapper"><span id="val-voltage" class="value">--</span><span class="unit">V</span></div></div>
+          <div class="metric"><span class="label">Courant</span><div class="value-wrapper"><span id="val-current" class="value">--</span><span class="unit">A</span></div></div>
+          <div class="metric"><span class="label">Puissance</span><div class="value-wrapper"><span id="val-power" class="value">--</span><span class="unit">W</span></div></div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="center-stage">
+      <div class="card video-card">
+        <div class="video-header"><h2>Flux Vidéo Direct</h2><span class="live-indicator">LIVE</span></div>
+        <div class="video-wrapper">
+          <img id="video-stream" src="http://192.168.1.30:90/" alt="Flux vidéo MJPEG indisponible">
+          <div id="video-fallback" class="video-fallback"><p>📷 Vidéo indisponible</p></div>
+        </div>
+      </div>
+    </main>
+
+    <aside class="right-panel">
+      <div class="card remote-card">
+        <h2>Télécommande</h2>
+
+        <button id="btn-toggle-body" class="btn-body active" type="button">BODY : ON</button>
+
+        <button id="btn-follow" class="btn-follow inactive" type="button">
+          <span class="follow-icon">👤</span><span id="follow-label">Suivi d'une personne</span>
+        </button>
+        <div id="follow-status" class="follow-status">Suivi désactivé</div>
+
+        <div class="dpad">
+          <button id="btn-up" class="btn-arrow up" type="button">▲</button>
+          <button id="btn-left" class="btn-arrow left" type="button">◀</button>
+          <div class="dpad-center"></div>
+          <button id="btn-right" class="btn-arrow right" type="button">▶</button>
+          <button id="btn-down" class="btn-arrow down" type="button">▼</button>
+        </div>
+
+        <div class="rotation-group">
+          <button id="btn-rotate-left" class="btn-rotate" type="button">↺ Pivot Gauche</button>
+          <button id="btn-rotate-right" class="btn-rotate" type="button">↻ Pivot Droit</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+  <script type="module" src="./main.ts"></script>
+</body>
+</html>
